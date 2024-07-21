@@ -48,7 +48,7 @@ void test_answer(){
     }
     cout << dp[n-1] << endl;
     int tmp = n-1;
-    while (pre[tmp] != 0)
+    while (tmp != 0)
     {   
         cout << tmp << " ";
         tmp = pre[tmp];
