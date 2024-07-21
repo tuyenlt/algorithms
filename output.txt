@@ -1,0 +1,4 @@
+123
+5 4 3 0
+
+Time taken by program is : 0.000046 sec

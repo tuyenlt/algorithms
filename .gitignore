@@ -2,5 +2,8 @@
 build/
 CMakeLists.txt
 input.txt
-output.txt
+# output.txt
 .gitignore
+# gen_input.txt
+testgen
+testgen.cpp
