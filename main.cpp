@@ -68,8 +68,8 @@ void solve(){
 signed main(){
     
 #ifndef ONLINE_JUDGE    
-    freopen("/home/tuyenlt/C++/Algorthims/input.txt", "r", stdin);
-    // freopen("/home/tuyenlt/C++/Algorthims/gen_input.txt", "r", stdin);
+    // freopen("/home/tuyenlt/C++/Algorthims/input.txt", "r", stdin);
+    freopen("/home/tuyenlt/C++/Algorthims/gen_input.txt", "r", stdin);
     freopen("/home/tuyenlt/C++/Algorthims/output.txt","w",stdout);
      struct timeval start, end;
     gettimeofday(&start, NULL);
