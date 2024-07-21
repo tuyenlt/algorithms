@@ -1,0 +1,6 @@
+.vscode/
+build/
+CMakeLists.txt
+input.txt
+output.txt
+.gitignore
