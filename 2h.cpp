@@ -24,8 +24,39 @@ void pre_process(){
     ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 }
 
+
+
 void solve(){
-    
+    int n;
+    cin >> n;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin >> a[i];
+    }
+    unordered_map<int,vector<int>> mp;
+    unordered_map<int,bool> added;
+    set<int> ans;
+    for(int i=1;i<(1<<n);i++){
+        int sum = 0;
+        for(int j=0;j<n;j++){
+            if(i & (1 << j)){
+                sum += a[j];
+            }
+        }
+        if(added[sum])continue;
+        for(auto it : mp[sum]){
+            if(__builtin_popcount(it) + __builtin_popcount(i)
+                == (__builtin_popcount(it ^ i))){
+                ans.insert(sum);
+                added[sum] = true;
+            }
+        }
+        mp[sum].push_back(i);
+    }
+    cout << ans.size() << endl;
+    for(auto it : ans){
+        cout << it << " ";
+    }
 }
 
 

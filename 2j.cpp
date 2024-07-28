@@ -25,7 +25,37 @@ void pre_process(){
 }
 
 void solve(){
-    
+    int n,m;
+    cin >> n >> m;
+    map<int,int> mp;
+    int max_vote1 = 0;
+    int max_vote2 = 0;
+    int tmp;
+    for(int i=0;i<n;i++){
+        cin >> tmp;
+        mp[tmp]++;
+    }
+    for(auto it : mp){
+         if(it.second > max_vote1){
+            max_vote2 = max_vote1;
+            max_vote1 = it.second;
+        }
+        else if(it.second > max_vote2 && it.second != max_vote1){
+            max_vote2 = it.second;
+        }
+    }
+    if(max_vote2 == max_vote1 || max_vote2 == 0){
+        cout << "NONE\n";
+        return;
+    }
+    for(auto it : mp){
+        if(it.second == max_vote2){
+            cout << it.first << endl;
+            return ;
+        }
+    }
+    cout << "NONE\n";
+   
 }
 
 

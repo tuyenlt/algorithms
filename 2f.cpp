@@ -25,6 +25,34 @@ void pre_process(){
 }
 
 void solve(){
+    int n,k;
+    cin >> n >> k;
+    int a[n];
+    int min_num = LONG_LONG_MAX;
+    for(int i=0;i<n;i++){
+        cin >> a[i];
+        min_num = min(min_num,a[i]);
+    }
+    vector<int> space;
+    int cnt = 0;
+    for(int i=0;i<n;i++){
+        if(a[i] == min_num){
+            if(cnt > 0){
+                space.push_back(cnt);
+                cnt = 0;
+            }
+        }else{
+            cnt++;
+        }
+    }
+    if(cnt > 0){
+        space.push_back(cnt);
+    }
+    int ans = 0;
+    for(auto sp : space){
+        ans += sp / (k-1) + (sp % (k-1) != 0);
+    }
+    cout << ans << endl;
     
 }
 
